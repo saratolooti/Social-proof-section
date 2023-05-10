@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
+- [Solution URL]((https://www.frontendmentor.io/solutions/resposive-social-proof-section-using-css-flexbox-_ucywJcIyz)
 - [Live Site URL](https://saratolooti.github.io/Social-proof-section/)
 
 ### Built with
