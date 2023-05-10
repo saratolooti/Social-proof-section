@@ -1,0 +1,221 @@
+:root {
+  --clr-primary-hsl-dark: 300, 43%, 22%;
+  --clr-primary-hsl-light: 333, 80%, 67%;
+
+  --clr-neutral-hsl-dark: 303, 10%, 53%;
+  --clr-neutral-hsl-light: 300, 24%, 96%;
+  --clr-neutral-hsl-white: 0, 0%, 100%;
+
+  --font-family-default: "League Spartan", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 500;
+  --fw-black: 700;
+
+  --fs-400: 0.938rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-700: 1.5rem;
+  --fs-800: 2rem;
+  --fs-900: 3rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  padding: 6em 10em;
+  font-family: var(--font-family-default);
+  font-size: var(--fs-400);
+  color: hsl(var(--clr-primary-hsl-dark));
+  background: top left no-repeat url("./images/bg-pattern-top-desktop.svg"),
+    bottom right / contain no-repeat
+      url("./images/bg-pattern-bottom-desktop.svg");
+}
+
+.social-proof {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6em;
+  max-width: 1175px;
+}
+
+/*----------------- Social proof heading ----------------- */
+
+.social-proof-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-proof-heading .heading {
+  width: 30%;
+}
+
+.social-proof-heading .rate-boxes {
+  width: 40%;
+}
+
+.social-proof-heading div > h1 {
+  font-size: var(--fs-900);
+  font-weight: var(--fw-black);
+  margin-bottom: 0.5em;
+}
+
+.social-proof-heading div > p {
+  color: hsl(var(--clr-neutral-hsl-dark));
+  line-height: 1.5em;
+}
+
+.social-proof-heading .rate-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+.rate-boxes > div {
+  width: 80%;
+  display: flex;
+  gap: 2em;
+  background: hsl(var(--clr-neutral-hsl-light));
+  padding: 1em 1.8em;
+  border: none;
+  border-radius: 0.5em;
+  align-self: var(--item-position);
+}
+
+.rate-item-title {
+  font-weight: var(--fw-black);
+}
+
+.rate-boxes > div[data-position="left"] {
+  --item-position: flex-start;
+}
+
+.rate-boxes > div[data-position="middle"] {
+  --item-position: center;
+}
+
+.rate-boxes > div[data-position="right"] {
+  --item-position: flex-end;
+}
+
+/*----------------- Customer reviews ----------------- */
+.testimonial {
+  width: 100%;
+  display: flex;
+  gap: 2em;
+}
+
+.card {
+  padding: 2em;
+  border: none;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  background: hsl(var(--clr-primary-hsl-dark));
+  transform: translateY(var(--item-translateY));
+}
+
+.card .profile {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.card .profile img {
+  width: 15%;
+  border-radius: 50%;
+}
+
+.card .user-info {
+  color: hsl(var(--clr-primary-hsl-light));
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.card .user-info span {
+  font-weight: var(--fw-bold);
+  color: hsl(var(--clr-neutral-hsl-white));
+}
+
+.card .review {
+  color: hsl(var(--clr-neutral-hsl-light), 0.8);
+  line-height: 1.5em;
+}
+
+.card[data-translateY="top"] {
+  --item-translateY: -20px;
+}
+
+.card[data-translateY="none"] {
+  --item-translateY: 0;
+}
+
+.card[data-translateY="bottom"] {
+  --item-translateY: 20px;
+}
+
+/*----------------- Media queries ----------------- */
+@media (max-width: 1240px) {
+  body {
+    padding: 3em 2em;
+    background: top left no-repeat url("./images/bg-pattern-top-mobile.svg"),
+      bottom right/ contain no-repeat
+        url("./images/bg-pattern-bottom-mobile.svg");
+  }
+
+  .social-proof-heading {
+    flex-direction: column;
+    gap: 3em;
+    text-align: center;
+  }
+
+  .social-proof-heading .heading > h1 {
+    font-size: var(--fs-800);
+    width: 80%;
+    margin-inline: auto;
+  }
+
+  .social-proof-heading .heading,
+  .social-proof-heading .rate-boxes {
+    width: 100%;
+  }
+
+  .rate-boxes > div {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    align-self: normal;
+  }
+
+  .testimonial {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 5em;
+  }
+}
